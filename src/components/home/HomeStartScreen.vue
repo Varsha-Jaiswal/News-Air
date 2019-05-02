@@ -7,19 +7,24 @@
                     <button class="btn btn-secondary " v-on:click="loadHeadlines">Load Headlines</button><hr>
                 </div>
             </div>
-        </div>
-        <div class="container mt-3">
-            <div class="row"> 
-                <div class="col-md-12 mb-2" v-for="(headline, i) in headlines" :key="i" >
-                    <div class="card" style="min-height:220px; max-height:220px;" >
-                        <div class="card-body">
-                            <p class="card-body text-muted"><b> {{ headline.source.name }}</b><br>
-                                {{ headline.title }}
-                            </p>
-                            <ModalData :data="{modalData:headline}" />
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" v-if="showLoader" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div> 
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-12 mb-2" v-for="(headline, i) in headlines" :key="i" >
+                        <div class="card" style="min-height:220px; max-height:220px;" >
+                            <div class="card-body">
+                                <p class="card-body text-muted"><b> {{ headline.source.name }}</b><br>
+                                    {{ headline.title }}
+                                </p>
+                                <ModalData :data="{modalData:headline}" />
+                            </div>
                         </div>
-                    </div>
-                </div>             
+                    </div>             
+                </div>
             </div>
         </div>
     </div>
@@ -34,15 +39,18 @@ export default{
     },
     data() {
         return {
-            headlines: []
+            headlines: [],
+            showLoader:false
         }
     },
     methods: {
         loadHeadlines() {
+            this.showLoader = true;
             fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=a7ead77a9d4d4005b87949ef73a8cb15')
             .then(data => data.json())
             .then(data => {
                 this.headlines = data.articles;
+                this.showLoader = false;
             })
         }
     }
