@@ -4,7 +4,6 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2>Top Headlines of India</h2><br>
-                    <button class="btn btn-secondary " v-on:click="loadHeadlines">Load Headlines</button><hr>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -39,14 +38,8 @@ export default{
     },
     data() {
         return {
-            headlines: [],
-            showLoader:false
-        }
-    },
-    methods: {
-        loadHeadlines() {
-            this.showLoader = true;
-            fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=a7ead77a9d4d4005b87949ef73a8cb15')
+            showLoader: true,
+            headlines: fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=a7ead77a9d4d4005b87949ef73a8cb15')
             .then(data => data.json())
             .then(data => {
                 this.headlines = data.articles;
