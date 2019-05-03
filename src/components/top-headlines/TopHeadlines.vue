@@ -3,14 +3,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Top Headlines from {{ country }}</h2><br>
-                    <form>
-                        <div class="form-group">
-                            <label for="searchQuery">Article Title</label>
-                            <input type="text" class="form-control" id="searchQuery" placeholder="Type to search!!">
+                    <h2>Top {{ categoryName }} Headlines from {{ countryName }}</h2><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="country-value">Country</label>
+                                    </div>
+                                    <select class="custom-select" id="country-value" >
+                                        <option v-for="(country, code) in countries" :key="code" v-bind:value="code">
+                                            {{country}}
+                                        </option>
+                                    </select>
+                                </div>      
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="category-value">Category</label>
+                                    </div>
+                                    <select class="custom-select" id="category-value" >
+                                        <option v-for="(category, code) in categories" :key="code" v-bind:value="code">
+                                            {{category}}
+                                        </option>
+                                    </select>
+                                </div>      
+                            </div>
                         </div>
-                    </form>
-                        <button class="btn btn-secondary " v-on:click="loadArticles">Load Articles</button><hr>
+                    </div>
+                    <button class="btn btn-secondary " v-on:click="loadArticles">Load Articles</button><hr>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -38,6 +60,8 @@
 
 <script>
 import ModalData from '@/components/common/modalData.vue'
+import countryData from '@/assets/data/country.json'
+import categoryData from '@/assets/data/category.json'
 
 export default{
     components: {
@@ -47,17 +71,22 @@ export default{
         return {
             articles: [],
             showLoader:false,
-            country: 'in'
+            countryCode: '',
+            countryName: '',
+            categoryCode: '',
+            categoryName: '',
+            countries: countryData.countries,
+            categories: categoryData.categories
         }
     },
     methods: {
         loadArticles() {
-            this.country = document.getElementById('country').value;
-            this.country =  this.country.charAt(0).toUpperCase() + this.country.slice(1);
+            this.countryCode = document.getElementById('country-value').value;
+            this.countryName = this.countries[this.countryCode];
+            this.categoryCode = document.getElementById('category-value').value;
+            this.categoryName = this.categories[this.categoryCode];
             this.showLoader = true;
-            fetch(`https://newsapi.org/v2/top-headlines?country=
-            +${this.searchQuery}+
-            &apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
+            fetch(`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&category=${this.categoryCode}&apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
             .then(data => data.json())
             .then(data => {
                 this.articles = data.articles;

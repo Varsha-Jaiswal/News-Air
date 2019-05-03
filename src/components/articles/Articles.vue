@@ -55,9 +55,7 @@ export default{
             this.searchQuery = document.getElementById('searchQuery').value;
             this.searchQuery =  this.searchQuery.charAt(0).toUpperCase() + this.searchQuery.slice(1);
             this.showLoader = true;
-            fetch(`https://newsapi.org/v2/everything?q=
-            +${this.searchQuery}+
-            &apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
+            fetch(`https://newsapi.org/v2/everything?q=${this.searchQuery}&apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
             .then(data => data.json())
             .then(data => {
                 this.articles = data.articles;
