@@ -9,8 +9,8 @@
             "Link":"/about"
         },
         {
-            "LinkName":"Top Headlines",
-            "Link":"/top-headlines"
+            "LinkName":"Headlines",
+            "Link":"/headlines"
         },
         {
             "LinkName":"Articles",

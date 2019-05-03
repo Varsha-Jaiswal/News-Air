@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
-import TopHeadlines from './views/TopHeadlines.vue'
+import Headlines from './views/Headlines.vue'
 import Articles from './views/Articles.vue'
 
 Vue.use(Router)
@@ -22,9 +22,9 @@ export default new Router({
       component: About
     },
     {
-      path: '/top-headlines',
-      name: 'top-headlines',
-      component: TopHeadlines
+      path: '/headlines',
+      name: 'headlines',
+      component: Headlines
     },
     {
       path: '/articles',

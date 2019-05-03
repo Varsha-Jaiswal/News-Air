@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-secondary " v-on:click="loadArticles">Load Articles</button><hr>
+                    <button class="btn btn-secondary " v-on:click="loadArticles">Load News</button><hr>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
