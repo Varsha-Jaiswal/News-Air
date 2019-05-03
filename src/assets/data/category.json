@@ -1,28 +1,10 @@
 {
-    "categories": [
-        {
-            "name": "Business",
-            "code": "business"
-        },
-        {
-            "name": "Entertainment",
-            "code": "entertainment"
-        },
-        {
-            "name": "Health",
-            "code": "health"
-        },
-        {
-            "name": "Science",
-            "code": "science"
-        },
-        {
-            "name": "Sports",
-            "code": "sports"
-        },
-        {
-            "name": "Technology",
-            "code": "technology"
-        }
-    ]
+    "categories": {
+        "business": "Business",
+        "entertainment": "Entertainment",
+        "health": "Health",
+        "science": "Science",
+        "sports": "Sports",
+        "technology": "Technology"
+    }
 }
