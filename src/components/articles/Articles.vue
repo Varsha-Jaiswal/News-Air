@@ -3,14 +3,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Recent {{ searchQuery }} Articles</h2><br>
+                    <h3 class="h3-responsive text-muted">
+                        <i class="fab fa-firstdraft"></i>&nbsp;
+                        <b>
+                            Recent {{ searchQuery }} Articles
+                        </b>
+                    </h3>
+                    <br><br>
                     <form>
                         <div class="form-group">
-                            <label for="searchQuery">Article Title</label>
+                            <label for="searchQuery"><b>Article Title</b></label>
                             <input type="text" class="form-control" id="searchQuery" placeholder="Type to search!!">
                         </div>
                     </form>
-                        <button class="btn btn-info " v-on:click="loadArticles">Load Articles</button><hr>
+                    <button class="btn btn-info " v-on:click="loadArticles">Load Articles</button>
                 </div>
             </div>
             <div class="d-flex justify-content-center">

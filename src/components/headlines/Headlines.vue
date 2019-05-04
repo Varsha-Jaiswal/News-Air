@@ -3,7 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Top {{ categoryName }} Headlines from {{ countryName }}</h2><br>
+                    <h3 class="h3-responsive text-muted">
+                        <i class="fa fa-podcast"></i>&nbsp;
+                        <b>
+                            Top {{ categoryName }} Headlines From {{ countryName }}
+                        </b>
+                    </h3>
+                    <br>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6">

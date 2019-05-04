@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <HomeStartScreen></HomeStartScreen>
     <About></About>
+    <HomeStartScreen></HomeStartScreen>
   </div>
 </template>
 

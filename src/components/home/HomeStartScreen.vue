@@ -3,7 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Top Headlines of India</h2><br>
+                    <hr>
+                    <br>
+                    <h3 class="h3-responsive text-muted">
+                        <i class="fa fa-podcast"></i>&nbsp;
+                        <b>Top Headlines of India</b>
+                    </h3>
+                    <br>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -25,6 +31,7 @@
                     </div>             
                 </div>
             </div>
+            <br>
         </div>
     </div>
 </template>
