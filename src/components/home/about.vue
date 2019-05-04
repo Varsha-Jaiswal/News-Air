@@ -1,16 +1,14 @@
 <template>
-    <div class="container mt-5 mb-5">
+    <div class="container mt-3">
         <div class="row my-5 align-items-center">
-            <div class="col-md-7">
+            <div class="col-md-12">
                 <h5>
                     <strong><b class="h6-responsive">News Air</b></strong> 
                     <small class="text-muted"> is the news application which uses 
-                        <a href="https://newsapi.org/" target="_blank"> News API </a>
+                        <a href="https://newsapi.org/" target="_blank">News API</a>
                         to fetch the latest news based on different country and category as well as articles on different topics.
-                        <br><br>
-                        This project has been created using <b>Vue.js, BootStrap</b> and has been hosted on <b>Firebase.</b> 
                         <br>
-                        It is still in progress and needs update in UI and more features will be added in future.
+                        <router-link class="m-0 z-depth-0" to="about">Details Here ...</router-link>
                     </small>
                 </h5>
             </div>

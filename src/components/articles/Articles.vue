@@ -10,7 +10,7 @@
                             <input type="text" class="form-control" id="searchQuery" placeholder="Type to search!!">
                         </div>
                     </form>
-                        <button class="btn btn-secondary " v-on:click="loadArticles">Load Articles</button><hr>
+                        <button class="btn btn-info " v-on:click="loadArticles">Load Articles</button><hr>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
