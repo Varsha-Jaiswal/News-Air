@@ -17,8 +17,8 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <a v-bind:href="data.modalData.url" target="_blank" class="btn btn-primary">Read Details</a>
-                    <a  class="btn btn-outline-primary waves-effect" data-dismiss="modal">Close</a>
+                    <a v-bind:href="data.modalData.url" target="_blank" class="btn btn-info">Read Details</a>
+                    <a  class="btn btn-outline-info waves-effect" data-dismiss="modal">Close</a>
                 </div>
             </div>
         </div>
