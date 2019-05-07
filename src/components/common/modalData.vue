@@ -1,6 +1,6 @@
 <template>
 <div>
-    <button class="btn btn-outline-info ml-3" data-toggle="modal" data-target="#news-description">Read More >></button>
+    <button class="btn btn-sm btn-outline-info " data-toggle="modal" data-target="#news-description">Read More >></button>
     <div class="modal fade" id="news-description" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-notify modal-info" role="document">
             <div class="modal-content">

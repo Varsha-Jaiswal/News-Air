@@ -19,8 +19,8 @@
             </div> 
             <div class="container mt-3">
                 <div class="row">
-                    <div class="col-md-12 mb-2" v-for="(headline, i) in headlines" :key="i" >
-                        <div class="card" style="min-height:220px; max-height:220px;" >
+                    <div class="col-md-4 mb-3" v-for="(headline, i) in headlines" :key="i" >
+                        <div class="card" style="min-height:250px; max-height:250px;" >
                             <div class="card-body">
                                 <p class="card-body text-muted"><b> {{ headline.source.name }}</b><br>
                                     {{ headline.title }}

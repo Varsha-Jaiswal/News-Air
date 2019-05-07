@@ -26,8 +26,8 @@
             </div> 
             <div class="container mt-3">
                 <div class="row">
-                    <div class="col-md-12 mb-2" v-for="(article, i) in articles" :key="i" >
-                        <div class="card" style="min-height:220px; max-height:220px;" >
+                    <div class="col-md-3 mb-2" v-for="(article, i) in articles" :key="i" >
+                        <div class="card" style="min-height:290px; max-height:290px;" >
                             <div class="card-body">
                                 <p class="card-body text-muted"><b> {{ article.source.name }}</b><br>
                                     {{ article.title }}
