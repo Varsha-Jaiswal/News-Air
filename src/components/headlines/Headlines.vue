@@ -51,7 +51,7 @@
                     <div class="col-md-12 text-center" v-if="showNotFound == true">
                         <p class="text-muted">Data Not Found</p>
                     </div>
-                    <div class="col-md-4 col-sm-6 p-0" v-for="(article, i) in articles" :key="i" style="border-radius:8px"  >
+                    <div class="col-md-4 col-sm-6 p-0" v-else v-for="(article, i) in articles" :key="i" style="border-radius:8px"  >
                         <div class="m-2 p-0" style="border: 1px solid rgb(224, 224, 224);border-radius:8px;"> 
                             <img v-if="article.urlToImage" :src="article.urlToImage" width="100%" height="200vh" alt="" srcset="">
                             <img v-else :src="require('@/assets/img/imgNotFound.jpg')" width="100%" height="200vh" alt="" srcset="">
@@ -69,7 +69,7 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <img v-if="article.urlToImage.length>0" :src="article.urlToImage" class="mb-3" width="100%" style="float:right"/>
+                                                        <img v-if="article.urlToImage" :src="article.urlToImage" class="mb-3" width="100%" style="float:right"/>
                                                         <span style="font-size:80%;background-color:#e0e0e0;border:1px solid #e0e0e0;border-radius:7px" class="text-muted mt-1 mb-0 p-1">{{ article.source.name }}</span>
                                                         <p style="font-size:95%" class="text-muted mt-1 mb-1">{{article.publishedAt | dateFilter}}</p>
                                                         <h5 class="mb-0 mt-1 h5-responsive"><b>{{ article.title  }}</b></h5> 
@@ -96,7 +96,6 @@
 <script>
 import countryData from '@/assets/data/country.json'
 import categoryData from '@/assets/data/category.json'
-
 export default{
     data() {
         return {
@@ -117,6 +116,7 @@ export default{
             this.countryName = this.countries[this.countryCode];
             this.categoryCode = document.getElementById('category-value').value;
             this.categoryName = this.categories[this.categoryCode];
+            this.showNotFound = false;
             this.showLoader = true;
             fetch(`https://newsapi.org/v2/top-headlines?country=${this.countryCode}&category=${this.categoryCode}&apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
             .then(data => data.json())

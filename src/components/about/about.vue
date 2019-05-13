@@ -2,7 +2,7 @@
     <div class="container mt-5 mb-5">
         <div class="row pt-2 align-items-center">
             <div class="col-md-4">
-                <img src="../../assets/logo.png" alt="News Air">
+                <img src="../../assets/logo.png" width="100%" alt="News Air">
             </div>
             <div class="col-md-7 ml-5">
                 <h5>

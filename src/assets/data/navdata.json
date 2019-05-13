@@ -5,16 +5,16 @@
             "Link":"/"
         },
         {
-            "LinkName":"About",
-            "Link":"/about"
-        },
-        {
             "LinkName":"Headlines",
             "Link":"/headlines"
         },
         {
             "LinkName":"Articles",
             "Link":"/articles"
-        }        
+        },
+        {
+            "LinkName":"About",
+            "Link":"/about"
+        }       
     ]
 }

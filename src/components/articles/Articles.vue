@@ -16,7 +16,7 @@
                             <input type="text" class="form-control" id="searchQuery" placeholder="Type to search!!">
                         </div>
                     </form>
-                    <button class="btn btn-info " v-on:click="loadArticles">Load Articles</button>
+                    <button class="btn btn-info btn-sm " v-on:click="loadArticles">Load Articles</button>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -47,7 +47,7 @@
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <img v-if="article.urlToImage.length>0" :src="article.urlToImage" class="mb-3" width="100%" style="float:right"/>
+                                                        <img v-if="article.urlToImage" :src="article.urlToImage" class="mb-3" width="100%" style="float:right"/>
                                                         <span style="font-size:80%;background-color:#e0e0e0;border:1px solid #e0e0e0;border-radius:7px" class="text-muted mt-1 mb-0 p-1">{{ article.source.name }}</span>
                                                         <p style="font-size:95%" class="text-muted mt-1 mb-1">{{article.publishedAt | dateFilter}}</p>
                                                         <h5 class="mb-0 mt-1 h5-responsive"><b>{{ article.title  }}</b></h5> 
@@ -86,6 +86,7 @@ export default{
             this.searchQuery = document.getElementById('searchQuery').value;
             this.searchQuery =  this.searchQuery.charAt(0).toUpperCase() + this.searchQuery.slice(1);
             this.showLoader = true;
+            this.showNotFound = false;
             fetch(`https://newsapi.org/v2/everything?q=${this.searchQuery}&apiKey=a7ead77a9d4d4005b87949ef73a8cb15`)
             .then(data => data.json())
             .then(data => {
